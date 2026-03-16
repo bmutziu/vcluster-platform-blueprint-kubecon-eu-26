@@ -1,0 +1,26 @@
+apiVersion: external-secrets.io/v1
+kind: ClusterSecretStore
+metadata:
+    labels:
+        argocd.argoproj.io/instance: {{ .cluster.name }}-external-secrets
+    name: "{{ .cluster.name }}-{{ .cluster.stage }}"
+spec:
+  provider:
+    bitwardensecretsmanager:
+      apiURL: https://vault.bitwarden.com/api
+      auth:
+        secretRef:
+          credentials:
+            key: token
+            name: bitwarden-access-token
+            namespace: external-secrets
+      bitwardenServerSDKURL: https://bitwarden-sdk-server.external-secrets.svc.cluster.local:9998
+      caProvider:
+        key: ca.crt
+        name: bitwarden-tls-certs
+        namespace: external-secrets
+        type: Secret
+      identityURL: https://vault.bitwarden.com/identity
+      organizationID: <REPLACE_ME>
+      projectID: <REPLACE_ME>
+
