@@ -17,11 +17,11 @@ policy-reporter:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-staging
       hosts:
-        - host: controlplane-prod.172.20.255.254.traefik.me
+        - host: controlplane-prod.172.19.255.254.traefik.me
           paths:
             - path: "/kyverno"
               pathType: Prefix
       tls:
         - secretName: tls-kyverno-ui
           hosts:
-            - controlplane-prod.172.20.255.254.traefik.me
+            - controlplane-prod.172.19.255.254.traefik.me

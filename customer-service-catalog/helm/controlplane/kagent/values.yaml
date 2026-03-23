@@ -19,7 +19,7 @@ kagent:
 ingress:
   enabled: true
   className: traefik
-  host: kagent.controlplane-prod.172.20.255.254.traefik.me
+  host: kagent.controlplane-prod.172.19.255.254.traefik.me
   path: /
   pathType: Prefix
   serviceName: kagent-ui

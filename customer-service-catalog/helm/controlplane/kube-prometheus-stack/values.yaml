@@ -21,11 +21,11 @@ kube-prometheus-stack:
         - /prometheus
       pathType: ImplementationSpecific
       hosts:
-        - controlplane-prod.172.20.255.254.traefik.me
+        - controlplane-prod.172.19.255.254.traefik.me
       tls:
         - secretName: tls-prometheus
           hosts:
-            - controlplane-prod.172.20.255.254.traefik.me
+            - controlplane-prod.172.19.255.254.traefik.me
 
 
     prometheusSpec:
@@ -41,7 +41,7 @@ kube-prometheus-stack:
             resources:
               requests:
                 storage: 10Gi
-      externalUrl: https://controlplane-prod.172.20.255.254.traefik.me/prometheus
+      externalUrl: https://controlplane-prod.172.19.255.254.traefik.me/prometheus
       routePrefix: /prometheus
     thanosServiceMonitor:
       serviceMonitor:
@@ -59,11 +59,11 @@ kube-prometheus-stack:
         - /alertmanager
       pathType: ImplementationSpecific
       hosts:
-        - controlplane-prod.172.20.255.254.traefik.me
+        - controlplane-prod.172.19.255.254.traefik.me
       tls:
         - secretName: tls-alertmanager
           hosts:
-            - controlplane-prod.172.20.255.254.traefik.me
+            - controlplane-prod.172.19.255.254.traefik.me
 
 
 # Below is an example alertmanager.config section:
@@ -110,7 +110,7 @@ kube-prometheus-stack:
 #      secrets:
 #        - msteams-webhook-url
 #        - uptimerobot-webhook-url
-      externalUrl: https://controlplane-prod.172.20.255.254.traefik.me/alertmanager
+      externalUrl: https://controlplane-prod.172.19.255.254.traefik.me/alertmanager
       routePrefix: /alertmanager
 
   kube-state-metrics:
@@ -161,16 +161,16 @@ kube-prometheus-stack:
       path: /grafana
       pathType: ImplementationSpecific
       hosts:
-        - controlplane-prod.172.20.255.254.traefik.me
+        - controlplane-prod.172.19.255.254.traefik.me
       tls:
         - secretName: tls-grafana
           hosts:
-            - controlplane-prod.172.20.255.254.traefik.me
+            - controlplane-prod.172.19.255.254.traefik.me
     envFromSecrets:
       - name: oauth2-credentials
     grafana.ini:
       server:
-        root_url: https://controlplane-prod.172.20.255.254.traefik.me/grafana/
+        root_url: https://controlplane-prod.172.19.255.254.traefik.me/grafana/
         serve_from_sub_path: true
     additionalDataSources:
       - access: proxy

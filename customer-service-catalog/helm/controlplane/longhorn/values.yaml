@@ -10,7 +10,7 @@ longhorn:
     defaultClassReplicaCount: 1
   ingress:
     ingressClassName: traefik
-    host: controlplane-prod.172.20.255.254.traefik.me
+    host: controlplane-prod.172.19.255.254.traefik.me
     tls: true
     tlsSecret: tls-longhorn
     path: "/longhorn(/|$)(.*)" # see path problems https://github.com/longhorn/longhorn/issues/1745

@@ -2,7 +2,7 @@ clusters:
   - name: controlplane
     stage: prod
     type: controlplane
-    dnsName: controlplane-prod.172.20.255.254.traefik.me
+    dnsName: controlplane-prod.172.19.255.254.traefik.me
     ingressClassName: traefik
     services:
       argocd:
