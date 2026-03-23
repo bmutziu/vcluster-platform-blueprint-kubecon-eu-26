@@ -21,6 +21,6 @@ spec:
         namespace: external-secrets
         type: Secret
       identityURL: https://vault.bitwarden.com/identity
-      organizationID: <REPLACE_ME>
-      projectID: <REPLACE_ME>
+      organizationID: 0efdac5e-6f2f-47c4-8055-b41500a2cfee
+      projectID: 782040d6-d808-4300-b4ff-b41500a54275
 
